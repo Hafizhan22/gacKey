@@ -1,0 +1,5 @@
+RewriteEngine On
+RewriteRule ^login(.*)$ api/login.php [L,QSA]
+RewriteRule ^key(.*)$ api/key.php [L,QSA]
+RewriteRule ^pic(.*)$ api/pic.php [L,QSA]
+RewriteRule ^borrow(.*)$ api/borrowkey.php [L,QSA]
