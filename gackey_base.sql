@@ -1,13 +1,14 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.0
+-- version 5.0.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 09, 2025 at 09:58 AM
--- Server version: 10.4.27-MariaDB
--- PHP Version: 7.4.33
+-- Generation Time: Feb 09, 2025 at 02:15 PM
+-- Server version: 10.4.11-MariaDB
+-- PHP Version: 7.4.1
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -34,7 +35,7 @@ CREATE TABLE `account` (
   `password` varchar(255) NOT NULL,
   `role` varchar(255) NOT NULL,
   `image` varchar(255) NOT NULL DEFAULT 'test.jpeg'
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `account`
@@ -54,7 +55,7 @@ INSERT INTO `account` (`NIP`, `name`, `initial`, `password`, `role`, `image`) VA
 --
 
 CREATE TABLE `history` (
-  `id` int(255) NOT NULL,
+  `ID` varchar(255) NOT NULL,
   `pass_id` varchar(255) NOT NULL,
   `key_RFID` varchar(255) NOT NULL,
   `purpose` varchar(255) NOT NULL,
@@ -64,7 +65,7 @@ CREATE TABLE `history` (
   `returnTime` varchar(255) NOT NULL,
   `returnSOC` varchar(255) NOT NULL,
   `Status` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -79,7 +80,7 @@ CREATE TABLE `keydata` (
   `LocationKey` varchar(255) NOT NULL,
   `StatusKey` varchar(255) NOT NULL,
   `Quantity` int(10) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `keydata`
@@ -102,7 +103,7 @@ CREATE TABLE `key_data` (
   `quantity` int(5) NOT NULL,
   `location` varchar(255) NOT NULL,
   `status` varchar(10) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `key_data`
@@ -125,7 +126,7 @@ CREATE TABLE `log_key` (
   `key_rfid` varchar(255) NOT NULL,
   `tipe` varchar(255) NOT NULL,
   `time_stamp` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -137,7 +138,7 @@ CREATE TABLE `merchant` (
   `id_merchant` varchar(20) NOT NULL,
   `nama_merchant` varchar(255) DEFAULT NULL,
   `alamat` varchar(255) DEFAULT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `merchant`
@@ -159,7 +160,7 @@ CREATE TABLE `pic_data` (
   `name` varchar(255) NOT NULL,
   `initial` varchar(255) NOT NULL,
   `team` varchar(20) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `pic_data`
@@ -202,7 +203,7 @@ CREATE TABLE `sale` (
   `response` varchar(600) NOT NULL,
   `time` varchar(255) DEFAULT NULL,
   `date` varchar(255) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `sale`
@@ -229,7 +230,7 @@ CREATE TABLE `user` (
   `password` varchar(50) NOT NULL,
   `gambar` varchar(100) NOT NULL,
   `level` varchar(30) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `user`
@@ -254,7 +255,7 @@ ALTER TABLE `account`
 -- Indexes for table `history`
 --
 ALTER TABLE `history`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`ID`);
 
 --
 -- Indexes for table `keydata`
@@ -273,16 +274,6 @@ ALTER TABLE `key_data`
 --
 ALTER TABLE `pic_data`
   ADD PRIMARY KEY (`RFID`);
-
---
--- AUTO_INCREMENT for dumped tables
---
-
---
--- AUTO_INCREMENT for table `history`
---
-ALTER TABLE `history`
-  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

@@ -1,6 +1,6 @@
 <?php
 
-if($role=="Security Operation System"){ 
+if($role=="Security Operation Center"){ 
 
 ?>
 

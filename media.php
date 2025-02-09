@@ -54,7 +54,7 @@ if ($NIP == "") {
                 <div class="sidebar-header">
                     <div class="logo">
                         <?php
-                        if ($role == "Security Operation System") {
+                        if ($role == "Security Operation Center") {
                             ?>
                             <img src="application/gambar/logomenu.png" alt="logo">
                             <?php
